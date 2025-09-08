@@ -9,7 +9,24 @@
     <link rel="stylesheet" href="/assets/index-b8096ec3.css">
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div style="padding: 20px; text-align: center; font-family: Arial, sans-serif;">
+        <h1>Loading BREEDVISION...</h1>
+        <p>If you see this message, the HTML is loading but React hasn't mounted yet.</p>
+        <p>Check the browser console for any errors.</p>
+      </div>
+    </div>
     
+    <script>
+      // Debug script to check if React mounts
+      setTimeout(() => {
+        const root = document.getElementById('root');
+        if (root.children.length === 1 && root.children[0].tagName === 'DIV') {
+          console.error('React app failed to mount. Check for JavaScript errors.');
+        } else {
+          console.log('React app mounted successfully');
+        }
+      }, 3000);
+    </script>
   </body>
 </html>
